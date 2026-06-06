@@ -138,6 +138,28 @@ function percentToResult() {
 }
 
 // ------------------------------
+// 10^x Function
+// ------------------------------
+function tenPow() {
+  if (!currentExpression) return;
+  const display = document.getElementById("result");
+
+  // Evaluate current expression first
+  const x = calculateExpression(currentExpression);
+  if (x === "Error") {
+    display.value = "Error";
+    currentExpression = "";
+    return;
+  }
+
+  const value = Math.pow(10, Number(x));
+
+  LAST_RESULT = String(value);
+  currentExpression = String(value);
+  updateResult();
+}
+
+// ------------------------------
 // Calculate Result
 // ------------------------------
 function calculateExpression(expression) {
@@ -185,3 +207,23 @@ function calculateResult() {
 function updateResult() {
   document.getElementById("result").value = currentExpression || "0";
 }
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    appendToResult,
+    bracketToResult,
+    backspace,
+    operatorToResult,
+    clearResult,
+    normalizeExpression,
+    percentToResult,
+    tenPow,
+    calculateExpression,
+    calculateResult,
+    updateResult,
+    getCurrentExpression: () => currentExpression,
+    setCurrentExpression: (value) => { currentExpression = value; },
+    getLastResult: () => LAST_RESULT,
+    setLastResult: (value) => { LAST_RESULT = value; }
+  };
+}
+

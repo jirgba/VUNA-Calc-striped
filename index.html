@@ -4,83 +4,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculator</title>
+  <title>Billiebot — Robotics</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <!-- Theme Toggle Button -->
-  <button class="btn btn-outline-secondary theme-toggle-btn" id="theme-toggle" onclick="toggleTheme()"
-    title="Toggle dark/light mode">
-    🌙
-  </button>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-6 col-md-6 col-sm-8">
-        <div class="border border-dotted border-3 rounded-3 p-3 mb-4 bg-white bg-opacity-50">
-          <h4 class="text-center group-header mb-0">VUNA CALCULATOR</h4>
-          <p class="text-center text-small text-muted">
-            <i>Created by set 2025/26 Software Engineering</i>
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card calculator-card">
-              <div class="card-body p-4">
-                <div class="calculator">
-                  <div class="display-container">
-                    <input type="text" class="form-control" id="result" placeholder="0" disabled />
-                  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Billiebot</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="calculator/index.html">Calculator</a>
+          </li>
+        </ul>
+        <a class="btn btn-outline-primary ms-lg-3" href="calculator/index.html">Open Calculator</a>
+      </div>
+    </div>
+  </nav>
 
-                  <div class="btn-grid">
-                    <button class="btn btn-light" onclick="bracketToResult('(')">(</button>
-                    <button class="btn btn-light" onclick="bracketToResult(')')">)</button>
-                    <button class="btn btn-light" onclick="backspace()">←</button>
-
-                    <!-- Row trig -->
-                    <button class="btn btn-action" onclick="clearResult()">AC</button>
-                    <button class="btn btn-light" onclick="tenPow()">10^x</button>
-
-                    <!-- Row 2 -->
-                    <button class="btn btn-light" onclick="appendToResult(7)">7</button>
-                    <button class="btn btn-light" onclick="appendToResult(8)">8</button>
-                    <button class="btn btn-light" onclick="appendToResult(9)">9</button>
-
-                    <!-- Row 3 -->
-                    <button class="btn btn-operator" onclick="operatorToResult('/')">÷</button>
-                    <button class="btn btn-light" onclick="appendToResult(4)">4</button>
-                    <button class="btn btn-light" onclick="appendToResult(5)">5</button>
-                    <button class="btn btn-light" onclick="appendToResult(6)">6</button>
-
-                    <!-- Row 4 -->
-                    <button class="btn btn-operator" onclick="operatorToResult('*')">×</button>
-                    <button class="btn btn-light" onclick="appendToResult(1)">1</button>
-                    <button class="btn btn-light" onclick="appendToResult(2)">2</button>
-                    <button class="btn btn-light" onclick="appendToResult(3)">3</button>
-
-                    <!-- Row 5 -->
-                    <button class="btn btn-operator" onclick="operatorToResult('+')">+</button>
-                    <button class="btn btn-light" onclick="appendToResult('.')">.</button>
-                    <button class="btn btn-light" onclick="appendToResult(0)">0</button>
-                    <button class="btn btn-operator" onclick="percentToResult('%')">%</button>
-                    
-                    <!-- Row 9 -->
-                    <button class="btn btn-operator" onclick="operatorToResult('-')">−</button>
-
-                    <button class="btn btn-equals" onclick="calculateResult()" style="grid-column: span 4;">=</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <section class="landing-hero py-5">
+    <div class="container">
+      <div class="hero-panel mx-auto">
+        <div class="hero-copy text-center text-md-start">
+          <span class="eyebrow mb-3 d-inline-block">Robotics for modern enterprises</span>
+          <h1 class="display-5 mb-3">Billiebot builds intelligent robots that scale your business.</h1>
+          <p class="lead text-muted mb-4">From autonomous material handling to perception-powered automation, we deliver dependable robotics systems designed for real-world operations.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-md-start">
+            <a class="btn btn-primary btn-lg" href="calculator/index.html">Open Calculator</a>
+            <a class="btn btn-outline-secondary btn-lg" href="#features">See Services</a>
           </div>
-
-          <script src="assets/js/bootstrap.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-          <script src="assets/js/script.js"></script>
-          <button id="scroll-to-calculator" title="Back to Calculator">↑</button>
+        </div>
+        <div class="hero-visual mt-5 mt-md-0 text-center">
+          <div class="hero-visual-card">
+            <svg width="220" height="220" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g fill="none" fill-rule="evenodd">
+                <rect width="64" height="64" rx="12" fill="#e9f2ff"/>
+                <g transform="translate(12 12)">
+                  <rect width="40" height="28" rx="4" fill="#ffffff" stroke="#d0e6ff"/>
+                  <circle cx="10" cy="10" r="4" fill="#0d6efd"/>
+                  <circle cx="30" cy="10" r="4" fill="#0d6efd"/>
+                  <rect x="6" y="18" width="28" height="4" rx="1" fill="#cfe2ff"/>
+                  <rect x="14" y="-6" width="12" height="6" rx="2" fill="#0d6efd"/>
+                </g>
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="eyebrow mb-2">Built for reliability</p>
+        <h2 class="fw-bold">What Billiebot delivers</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card feature-card p-3 h-100">
+            <div class="card-body">
+              <h5 class="card-title">Custom Platforms</h5>
+              <p class="card-text text-muted">Design and build robots tailored to your workflow and environment.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card feature-card p-3 h-100">
+            <div class="card-body">
+              <h5 class="card-title">Perception & Autonomy</h5>
+              <p class="card-text text-muted">State-of-the-art perception stacks and autonomous behaviors integrated into reliable systems.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card feature-card p-3 h-100">
+            <div class="card-body">
+              <h5 class="card-title">Integration & Support</h5>
+              <p class="card-text text-muted">Deployment, training and long-term support to keep systems running smoothly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-light py-4 mt-auto">
+    <div class="container text-center">
+      <small class="text-muted">© 2026 Billiebot</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

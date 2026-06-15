@@ -40,6 +40,7 @@ jobs:
           docker create --name temp calc-app
           docker cp temp:/usr/share/nginx/html/index.html dist/
           docker cp temp:/usr/share/nginx/html/assets dist/
+          docker cp temp:/usr/share/nginx/html/calculator dist/
           docker rm temp
 
       - name: Deploy via FTP
